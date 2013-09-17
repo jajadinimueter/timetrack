@@ -23,6 +23,8 @@ CI
 
 Für die CI wird [travis](https://travis-ci.org/) verwendet.
 
+Hier der [Direktlink zu den Builds](https://travis-ci.org/jajadinimueter/timetrack).
+
 Dieser Service ist gratis und lässt sich wunderbar zusammen mit github benutzen. Github hat sogar
 eine travis-Integration.
 
@@ -30,7 +32,7 @@ eine travis-Integration.
 Projekt aufsetzen und kompilieren
 ---------------------------------
 
-Dafür wird apache maven und idea intellij verwendet. Durch das Benutzen von maven für den
+Dafür wird Apache maven und Idea Intellij verwendet. Durch das Benutzen von maven für den
 Build-Prozess und das Fetchen von Abhängigkeiten kann sichergestellt werden, dass das
 Projekt bei jedem Mitglied der Gruppe gebuildet werden kann.
 
@@ -45,6 +47,15 @@ Tests werden via `mvn test` target laufen gelassen. Maven verwendet dann alle Un
 
 Deployment
 ----------
+
+Mit dem maven wagon plugin.
+
+`mvn wagon:upload-single` ausführen.
+
+Das Projekt wird mit scp deployed. Leider haben wir bis jetzt noch keinen Server,
+darum haben wir diesen Task erst vorbereitet. Sobald wir einen Server haben,
+können wir die Properties `deploy.url` und `deploy.path` anpassen und das `war`-File
+auf den Server deployen.
 
 
 
